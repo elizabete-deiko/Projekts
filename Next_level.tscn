@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://myiccwrtt5m6"]
+
+[ext_resource type="Texture2D" uid="uid://djn3mokau5tvh" path="res://Art/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01-door.png" id="1_738gb"]
+[ext_resource type="Script" path="res://Next_level.gd" id="2_qfigo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uv7vx"]
+size = Vector2(37, 64)
+
+[node name="Next_level" type="Area2D"]
+script = ExtResource("2_qfigo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_738gb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_uv7vx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
